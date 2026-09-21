@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Cek Nilai Siswa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <main class="kartu">
+        <header class="kartu-header">
+            <h1>Portal Akademik</h1>
+            <p>Catat dan Kelola Nilai Ujian Semester</p>
+        </header>
+
+        <div class="kartu-isi">
+            <form id="gradeForm" class="form" novalidate>
+                <label for="namaInput" class="label">Nama Siswa</label>
+                <input
+                    type="text"
+                    id="namaInput"
+                    class="input input-nama"
+                    placeholder="Contoh: Budi Santoso"
+                    autocomplete="off"
+                >
+                <div class="bagian-mapel">
+                    <div class="bagian-mapel-judul">
+                        <span class="label-teks">Mata Pelajaran dan Nilai</span>
+                        <span class="petunjuk">Nilai 0 - 100</span>
+                    </div>
+
+                    <div id="subjectRows" class="daftar-baris"></div>
+
+                    <button type="button" id="addSubjectBtn" class="tombol-tambah">
+                        + Tambah mata pelajaran
+                    </button>
+                </div>
+
+                <div id="errorMessage" class="pesan-error hidden" role="alert">
+                    <svg class="pesan-error-ikon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+                    </svg>
+                    <p id="errorText" class="pesan-error-teks"></p>
+                </div>
+                <div class="aksi">
+                    <button type="submit" id="submitBtn" class="tombol tombol-utama">Simpan Nilai</button>
+                    <button type="button" id="resetBtn" class="tombol tombol-sekunder">Reset</button>
+                </div>
+            </form>
+            <section id="daftarSiswa" class="daftar-siswa">
+                <h2 class="judul-daftar">Daftar Siswa</h2>
+                <p id="emptyState" class="kosong">Belum ada data. Isi form di atas lalu klik Simpan Nilai.</p>
+                <div id="studentList" class="daftar-kartu"></div>
+            </section>
+
+        </div>
+    </main>
+
+</body>
+</html>
