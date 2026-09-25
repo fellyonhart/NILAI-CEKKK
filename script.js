@@ -272,7 +272,6 @@ form.addEventListener("submit", function (e) {
   e.preventDefault();
   sembunyikanError();
 
-  // Validasi nama
   const nama = namaInput.value.trim();
   if (!nama) {
     tampilkanError("Nama siswa belum diisi.", namaInput);
